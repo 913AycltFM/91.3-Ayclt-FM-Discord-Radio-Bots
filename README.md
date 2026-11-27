@@ -64,10 +64,10 @@ You can optionally add a `channel_id` to a bot entry in your private `bots.json`
 {
   "name": "91.3 Ayclt FM",
   "token": "YOUR_DISCORD_BOT_TOKEN",
+  "channel_id": 123456789012345678
   "stream_url": "https://radio.913aycltfm.com/listen/91.3_ayclt_fm/discord",
   "nowplaying_url": "https://radio.913aycltfm.com/api/nowplaying/91.3_ayclt_fm",
-  "status_text": "La Marque Texas #1 Hit Music Station",
-  "channel_id": 123456789012345678
+  "status_text": "La Marque Texas #1 Hit Music Station"
 }
 ```
 
