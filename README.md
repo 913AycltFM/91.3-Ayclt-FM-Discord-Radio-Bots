@@ -153,7 +153,7 @@ Available slash commands:
 | `/help` | List the available radio commands. |
 | `/play` | Start or resume playback in this server. |
 | `/pause` | Pause playback without leaving the voice channel. |
-| `/volume` | Set this server's volume from 0 to 100 percent. |
+| `/volume` | Set this server's volume from 0 to 200 percent. Values above 100% amplify the audio and may cause distortion. |
 | `/ping` | Show the bot's Discord gateway latency. |
 
 Only `/leave` and `/reconnect` have an application-level **Manage Server** permission check. The bot also needs **Manage Channels** if you want it to update the voice-channel status; audio playback does not require that permission.
