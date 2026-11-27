@@ -28,7 +28,7 @@ Each entry requires its own Discord bot application and token. The stream and no
 
 ## Requirements
 
-- Ubuntu Server, Debian, or Raspberry Pi OS
+- Ubuntu Server, Debian, or Raspberry Pi Lite OS
 - Python 3.10 or newer
 - FFmpeg and the libopus runtime library
 - Git and sudo access for installation
