@@ -2,29 +2,29 @@
   {
     "name": "91.3 Ayclt FM",
     "token": "PASTE_91_3_AYCLT_FM_BOT_TOKEN",
-    "stream_url": "https://radio.example.com/listen/91.3_ayclt_fm/discord",
-    "nowplaying_url": "https://radio.example.com/api/nowplaying/91.3_ayclt_fm",
+    "stream_url": "https://radio.913aycltfm.com/listen/91.3_ayclt_fm/discord",
+    "nowplaying_url": "https://radio.913aycltfm.com/api/nowplaying/91.3_ayclt_fm",
     "status_text": "91.3 Ayclt FM"
   },
   {
     "name": "91.3 Ayclt FM HD2",
     "token": "PASTE_HD2_BOT_TOKEN",
-    "stream_url": "https://radio.example.com/listen/91.3_ayclt_fm_hd2/discord",
-    "nowplaying_url": "https://radio.example.com/api/nowplaying/91.3_ayclt_fm_hd2",
+    "stream_url": "https://radio.913aycltfm.com/listen/91.3_ayclt_fm_hd2/discord",
+    "nowplaying_url": "https://radio.913aycltfm.com/api/nowplaying/91.3_ayclt_fm_hd2",
     "status_text": "91.3 Ayclt FM HD2"
   },
   {
     "name": "91.3 Ayclt FM HD3",
     "token": "PASTE_HD3_BOT_TOKEN",
-    "stream_url": "https://radio.example.com/listen/91.3_ayclt_fm_hd3/discord",
-    "nowplaying_url": "https://radio.example.com/api/nowplaying/91.3_ayclt_fm_hd3",
+    "stream_url": "https://radio.913aycltfm.com/listen/91.3_ayclt_fm_hd3/discord",
+    "nowplaying_url": "https://radio.913aycltfm.com/api/nowplaying/91.3_ayclt_fm_hd3",
     "status_text": "91.3 Ayclt FM HD3"
   },
   {
     "name": "91.3 Ayclt FM HD4",
     "token": "PASTE_HD4_BOT_TOKEN",
-    "stream_url": "https://radio.example.com/listen/91.3_ayclt_fm_hd4/discord",
-    "nowplaying_url": "https://radio.example.com/api/nowplaying/91.3_ayclt_fm_hd4",
+    "stream_url": "https://radio.913aycltfm.com/listen/91.3_ayclt_fm_hd4/discord",
+    "nowplaying_url": "https://radio.913aycltfm.com/api/nowplaying/91.3_ayclt_fm_hd4",
     "status_text": "91.3 Ayclt FM HD4"
   }
 ]
