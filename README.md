@@ -64,7 +64,7 @@ From the project directory, run:
 ./update.sh
 ```
 
-The updater fetches the latest `main` branch, installs the Python packages listed in `requirements.txt`, and checks the Python files for syntax errors. It preserves your private `bots.json`. It refuses to proceed if tracked local code changes are present. If the service was already running, it restarts it after a successful update; if it was stopped, it leaves it stopped.
+The updater fetches the latest `main` branch, installs the Python packages listed in `requirements.txt`, and checks the Python files for syntax errors. It refuses to proceed if Git detects tracked local changes. **Important:** `bots.json` is a tracked starter-template file, so editing it with real credentials makes it a tracked local change and the updater will stop rather than update. Before updating, make a secure backup of `bots.json`, restore the repository copy with `git restore bots.json`, run `./update.sh`, then restore your private configuration from the backup and run `chmod 600 bots.json`. Never upload or commit the backup. If the service was already running, the updater restarts it after a successful update; if it was stopped, it leaves it stopped.
 
 ## Start and manage
 
@@ -90,7 +90,16 @@ sudo systemctl stop discord-radio.service
 
 Invite each bot to the intended Discord server. Join the voice channel where you want a station to play, then run `/join`. Each bot stays disconnected until a member uses `/join`. A bot can serve multiple Discord servers simultaneously, with independent playback controls per server.
 
-Available slash commands include `/join`, `/leave`, `/nowplaying`, `/status`, `/reconnect`, `/play`, `/pause`, `/volume`, `/ping`, and `/help`.
+Available slash commands include:
+
+- `/join` — join the voice channel you are currently in and start the radio.
+- `/leave` — leave the voice channel in this server (Manage Server permission required). This acknowledges the interaction immediately and disables automatic reconnection until `/join` is used again.
+- `/reconnect` — reconnect the bot to its remembered radio voice channel (Manage Server permission required).
+- `/play` and `/pause` — start/resume or pause playback without leaving voice.
+- `/volume` — set the per-server volume from **0% to 200%**. Higher levels may cause distortion depending on the source audio.
+- `/nowplaying` — show the current track; `/status` — check voice and playback state; `/ping` — show gateway latency; `/help` — list commands.
+
+The bot supervises voice connections and attempts to restart playback after stream playback ends or fails. This recovery logic does not guarantee recovery from every Discord voice or encryption issue.
 
 ## Generic project
 
