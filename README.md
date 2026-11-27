@@ -42,15 +42,15 @@ The installer installs dependencies and registers the systemd service. It does n
 
 ## Configure
 
-Run the interactive wizard. It hides bot tokens while typing and saves the local configuration with owner-only permissions:
+Run the interactive bot manager. It hides bot tokens while typing and saves the local configuration with owner-only permissions:
 
 ```bash
 ./venv/bin/python configure.py
 ```
 
-Add the four station bots using the correct Discord tokens, stream listener URLs, and AzuraCast now-playing API URLs for your deployment. The checked-in `bots.json` shows the station names and example URL patterns only; its tokens and host are placeholders. The optional `channel_id` property is intentionally omitted from the public template. Add it to your private configuration only if you want a bot to automatically join a default voice channel.
+The manager lets you add a bot, edit an existing bot, or remove a bot. When editing, press Enter to keep an existing value; enter a new token only if you need to replace it. Token input is hidden. The checked-in `bots.json` shows the station names and example URL patterns only; its tokens and host are placeholders. The optional `channel_id` property is intentionally omitted from the public template. Add it to your private configuration only if you want a bot to automatically join a default voice channel.
 
-You can also edit `bots.json` manually. Keep it private:
+You can also edit `bots.json` manually if you prefer. Keep it private:
 
 ```bash
 chmod 600 bots.json
@@ -73,7 +73,7 @@ You can optionally add a `channel_id` to a bot entry in your private `bots.json`
 
 Replace the example number with the ID of a voice channel the bot can access. When set, the bot automatically joins that channel after startup. This setting is optional, so the public `bots.json` template does not include the property. Add it only to your private `bots.json` if you want automatic joining. If you omit it or leave the wizard prompt blank, the bot stays disconnected until someone joins a voice channel and runs `/join`. The configured channel must belong to a server where the bot is installed.
 
-## Start and manage
+After saving configuration changes, restart the service so the bots load the updated settings:\n\n```bash\nsudo systemctl restart discord-radio.service\n```\n\n## Update the bot software\n\nFrom the project directory, run the updater:\n\n```bash\ncd ~/discord-radio\nbash update.sh\n```\n\nThe updater fetches the latest GitHub changes, preserves your private local `bots.json`, updates Python dependencies, checks the Python files for syntax errors, and restarts the systemd service. It uses a fast-forward-only Git pull; if your checkout has conflicting local code changes, the update stops rather than overwriting them.\n\n## Start and manage
 
 ```bash
 sudo systemctl enable --now discord-radio.service
