@@ -47,7 +47,12 @@ fi
 if [[ -f "${CONFIG_FILE}" ]]; then
     CONFIG_BACKUP="$(mktemp "${TMPDIR:-/tmp}/discord-radio-bots-config.XXXXXX")"
     chmod 600 "${CONFIG_BACKUP}"
-    cp -p -- "${CONFIG_FILE}" "${CONFIG_BACKUP}"
+    if ! cp -p -- "${CONFIG_FILE}" "${CONFIG_BACKUP}"; then
+        rm -f -- "${CONFIG_BACKUP}"
+        CONFIG_BACKUP=""
+        echo "Could not back up bots.json; stopping without changing it."
+        exit 1
+    fi
     echo "Private bots.json safely backed up for the update."
 fi
 
