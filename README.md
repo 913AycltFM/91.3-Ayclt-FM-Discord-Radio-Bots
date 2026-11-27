@@ -56,6 +56,16 @@ You can also edit `bots.json` manually. Keep it private:
 chmod 600 bots.json
 ```
 
+## Update the installation
+
+From the project directory, run:
+
+```bash
+./update.sh
+```
+
+The updater fetches the latest `main` branch, installs the Python packages listed in `requirements.txt`, and checks the Python files for syntax errors. It preserves your private `bots.json`. It refuses to proceed if tracked local code changes are present. If the service was already running, it restarts it after a successful update; if it was stopped, it leaves it stopped.
+
 ## Start and manage
 
 ```bash
