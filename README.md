@@ -21,7 +21,7 @@ The repository's `.gitignore` excludes local `bots.json` edits. If a token is ev
 
 ## Requirements
 
-- Ubuntu Server, Debian, or Raspberry Pi OS
+- Ubuntu Server, Debian, or Raspberry Pi Lite OS
 - Python 3.10+
 - FFmpeg and libopus
 - Discord bot applications with the `bot` and `applications.commands` OAuth scopes
