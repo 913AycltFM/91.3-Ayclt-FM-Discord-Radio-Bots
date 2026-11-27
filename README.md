@@ -56,6 +56,23 @@ You can also edit `bots.json` manually. Keep it private:
 chmod 600 bots.json
 ```
 
+### Optional default voice channel
+
+You can optionally add a `channel_id` to a bot entry in your private `bots.json`:
+
+```json
+{
+  "name": "91.3 Ayclt FM",
+  "token": "YOUR_DISCORD_BOT_TOKEN",
+  "stream_url": "https://radio.913aycltfm.com/listen/91.3_ayclt_fm/discord",
+  "nowplaying_url": "https://radio.913aycltfm.com/api/nowplaying/91.3_ayclt_fm",
+  "status_text": "La Marque Texas #1 Hit Music Station",
+  "channel_id": 123456789012345678
+}
+```
+
+Replace the example number with the ID of a voice channel the bot can access. When set, the bot automatically joins that channel after startup. This setting is optional: omit it or leave it blank in the setup wizard to keep the bot disconnected until someone joins a voice channel and runs `/join`. The configured channel must belong to a server where the bot is installed.
+
 ## Start and manage
 
 ```bash
