@@ -48,7 +48,7 @@ Run the interactive wizard. It hides bot tokens while typing and saves the local
 ./venv/bin/python configure.py
 ```
 
-Add the four station bots using the correct Discord tokens, stream listener URLs, and AzuraCast now-playing API URLs for your deployment. The checked-in `bots.json` shows the station names and example URL patterns only; its tokens and host are placeholders.
+Add the four station bots using the correct Discord tokens, stream listener URLs, and AzuraCast now-playing API URLs for your deployment. The checked-in `bots.json` shows the station names and example URL patterns only; its tokens and host are placeholders. The optional `channel_id` property is intentionally omitted from the public template. Add it to your private configuration only if you want a bot to automatically join a default voice channel.
 
 You can also edit `bots.json` manually. Keep it private:
 
@@ -71,7 +71,7 @@ You can optionally add a `channel_id` to a bot entry in your private `bots.json`
 }
 ```
 
-Replace the example number with the ID of a voice channel the bot can access. When set, the bot automatically joins that channel after startup. This setting is optional: omit it or leave it blank in the setup wizard to keep the bot disconnected until someone joins a voice channel and runs `/join`. The configured channel must belong to a server where the bot is installed.
+Replace the example number with the ID of a voice channel the bot can access. When set, the bot automatically joins that channel after startup. This setting is optional, so the public `bots.json` template does not include the property. Add it only to your private `bots.json` if you want automatic joining. If you omit it or leave the wizard prompt blank, the bot stays disconnected until someone joins a voice channel and runs `/join`. The configured channel must belong to a server where the bot is installed.
 
 ## Start and manage
 
@@ -95,7 +95,7 @@ sudo systemctl stop discord-radio.service
 
 ## Discord usage
 
-Invite each bot to the intended Discord server. Join the voice channel where you want a station to play, then run `/join`. Each bot stays disconnected until a member uses `/join`. A bot can serve multiple Discord servers simultaneously, with independent playback controls per server.
+Invite each bot to the intended Discord server. By default, each bot stays disconnected until a member joins a voice channel and runs `/join`. If you add an optional `channel_id` to that bot's private configuration, it automatically joins that default voice channel after startup. A bot can serve multiple Discord servers simultaneously, with independent playback controls per server.
 
 Available slash commands include `/join`, `/leave`, `/nowplaying`, `/status`, `/reconnect`, `/play`, `/pause`, `/volume`, `/ping`, and `/help`.
 
